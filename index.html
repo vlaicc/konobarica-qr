@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #8B7355;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -22,88 +22,37 @@
         }
 
         .container {
-            background: white;
+            background: #F5E6D3;
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 3px solid #8B7355;
+            border-radius: 10px;
             text-align: center;
             max-width: 400px;
             width: 100%;
-            animation: fadeIn 0.6s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .message {
             font-size: 24px;
-            color: #333;
+            color: #4A3728;
             margin-bottom: 30px;
             font-weight: 600;
-            line-height: 1.4;
         }
 
         .phone {
             font-size: 32px;
-            color: #667eea;
+            color: #4A3728;
             font-weight: bold;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
-        }
-
-        .call-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .call-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
-
-        .call-button:active {
-            transform: translateY(0);
-        }
-
-        .heart {
-            color: #e74c3c;
-            font-size: 40px;
-            margin-bottom: 20px;
-            animation: heartbeat 1.5s ease-in-out infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
+            padding: 20px;
+            border: 2px solid #8B7355;
+            border-radius: 8px;
+            background: #FFF8E7;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="heart">♥</div>
         <div class="message">Draga sve smo rijesili</div>
         <div class="phone">092 344 4676</div>
-        <a href="tel:+381923444676" class="call-button">Pozovi me</a>
     </div>
 </body>
 </html>
