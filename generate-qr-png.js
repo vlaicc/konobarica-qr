@@ -20,12 +20,22 @@ async function generateQRWithIcon(filename, iconSVG) {
     // Load QR code image
     const qrImage = await loadImage(qrDataURL);
 
-    // Create canvas same size as QR code
-    const canvas = createCanvas(qrImage.width, qrImage.height);
+    // Add white padding around QR code (~3mm = ~23px at print resolution)
+    const padding = 23;
+    const borderRadius = 35;
+
+    // Create canvas with padding
+    const canvas = createCanvas(qrImage.width + padding * 2, qrImage.height + padding * 2);
     const ctx = canvas.getContext('2d');
 
-    // Draw QR code
-    ctx.drawImage(qrImage, 0, 0);
+    // Draw white rounded rectangle background
+    ctx.fillStyle = '#FFFFFF';
+    ctx.beginPath();
+    ctx.roundRect(0, 0, canvas.width, canvas.height, borderRadius);
+    ctx.fill();
+
+    // Draw QR code centered with padding
+    ctx.drawImage(qrImage, padding, padding);
 
     // Draw icon container (white square) in center
     const iconSize = 170;
