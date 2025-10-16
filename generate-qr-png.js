@@ -28,13 +28,13 @@ async function generateQRWithIcon(filename, iconSVG) {
     ctx.drawImage(qrImage, 0, 0);
 
     // Draw icon container (white rounded square) in center
-    const iconSize = 150;
+    const iconSize = 165;
     const iconX = canvas.width / 2 - iconSize / 2;
     const iconY = canvas.height / 2 - iconSize / 2;
 
     ctx.fillStyle = '#FFFFFF';
     ctx.beginPath();
-    ctx.roundRect(iconX, iconY, iconSize, iconSize, 25);
+    ctx.roundRect(iconX, iconY, iconSize, iconSize, 28);
     ctx.fill();
 
     // Draw icon
