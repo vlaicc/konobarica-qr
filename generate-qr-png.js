@@ -34,6 +34,13 @@ async function generateQRWithIcon(filename, iconSVG) {
     ctx.roundRect(0, 0, canvas.width, canvas.height, borderRadius);
     ctx.fill();
 
+    // Draw cut guide lines (thin black border)
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.roundRect(0, 0, canvas.width, canvas.height, borderRadius);
+    ctx.stroke();
+
     // Draw QR code centered with padding
     ctx.drawImage(qrImage, padding, padding);
 
