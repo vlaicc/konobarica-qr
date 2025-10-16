@@ -59,22 +59,22 @@ async function generateQRWithIcon(filename, iconSVG) {
         // Dot at bottom
         ctx.fillStyle = '#000000';
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 30, 9, 0, Math.PI * 2);
+        ctx.arc(centerX, centerY + 29, 9, 0, Math.PI * 2);
         ctx.fill();
 
         // First arc (smallest) - inner
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 30, 26, Math.PI * 1.25, Math.PI * 1.75, false);
+        ctx.arc(centerX, centerY + 29, 26, Math.PI * 1.25, Math.PI * 1.75, false);
         ctx.stroke();
 
         // Second arc (middle)
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 30, 46, Math.PI * 1.25, Math.PI * 1.75, false);
+        ctx.arc(centerX, centerY + 29, 46, Math.PI * 1.25, Math.PI * 1.75, false);
         ctx.stroke();
 
         // Third arc (largest) - outer
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 30, 66, Math.PI * 1.25, Math.PI * 1.75, false);
+        ctx.arc(centerX, centerY + 29, 66, Math.PI * 1.25, Math.PI * 1.75, false);
         ctx.stroke();
     } else if (iconSVG === 'menu') {
         // Menu icon (hamburger)
