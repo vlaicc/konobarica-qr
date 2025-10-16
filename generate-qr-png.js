@@ -49,7 +49,7 @@ async function generateQRWithIcon(filename, iconSVG) {
         // Dot at bottom
         ctx.fillStyle = '#000000';
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 30, 6, 0, Math.PI * 2);
+        ctx.arc(centerX, centerY + 30, 9, 0, Math.PI * 2);
         ctx.fill();
 
         // First arc (smallest) - inner
