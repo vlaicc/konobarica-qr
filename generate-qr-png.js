@@ -28,7 +28,7 @@ async function generateQRWithIcon(filename, iconSVG) {
     ctx.drawImage(qrImage, 0, 0);
 
     // Draw icon container (white square) in center
-    const iconSize = 165;
+    const iconSize = 170;
     const iconX = canvas.width / 2 - iconSize / 2;
     const iconY = canvas.height / 2 - iconSize / 2;
 
