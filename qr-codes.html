@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LûBar QR Codes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #3a3a3a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .qr-card {
+            background: transparent;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .qr-code {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-code img,
+        .qr-code canvas {
+            filter: contrast(1.1);
+            image-rendering: pixelated;
+        }
+
+        .icon-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: #ffffff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .wifi-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .menu-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .label {
+            font-size: 32px;
+            color: #e0e0e0;
+            font-weight: 400;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .instruction {
+            color: #F5E6D3;
+            font-size: 18px;
+            margin-top: 40px;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #F5E6D3;
+            color: #2d2d2d;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #e0d4c0;
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .instruction {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <!-- Wi-Fi QR Code -->
+            <div class="qr-card">
+                <div class="qr-code" id="wifi-qr">
+                    <div class="icon-container">
+                        <svg class="wifi-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 20H12.01M2 8.82C5.27 6.94 9.01 6 12 6C14.99 6 18.73 6.94 22 8.82M5 12.859C7.23 11.663 9.52 11 12 11C14.48 11 16.77 11.663 19 12.859M8.5 16.429C9.83 15.826 10.89 15.5 12 15.5C13.11 15.5 14.17 15.826 15.5 16.429" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu QR Code -->
+            <div class="qr-card">
+                <div class="qr-code" id="menu-qr">
+                    <div class="icon-container">
+                        <svg class="menu-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // GitHub Pages URL
+        const targetURL = 'https://vlaicc.github.io/konobarica-qr/';
+
+        // Generiši Wi-Fi QR kod
+        new QRCode(document.getElementById("wifi-qr"), {
+            text: targetURL,
+            width: 200,
+            height: 200,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+        // Generiši Menu QR kod
+        new QRCode(document.getElementById("menu-qr"), {
+            text: targetURL,
+            width: 200,
+            height: 200,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>
