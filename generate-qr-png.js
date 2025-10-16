@@ -37,7 +37,7 @@ async function generateQRWithIcon(filename, iconSVG) {
 
     // Draw icon
     ctx.strokeStyle = '#000000';
-    ctx.lineWidth = 12;
+    ctx.lineWidth = 13;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
 
@@ -49,29 +49,29 @@ async function generateQRWithIcon(filename, iconSVG) {
         // Dot at bottom
         ctx.fillStyle = '#000000';
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 35, 8, 0, Math.PI * 2);
+        ctx.arc(centerX, centerY + 32, 7, 0, Math.PI * 2);
         ctx.fill();
 
         // First arc (smallest) - inner
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 35, 30, Math.PI * 1.25, Math.PI * 1.75, false);
+        ctx.arc(centerX, centerY + 32, 28, Math.PI * 1.25, Math.PI * 1.75, false);
         ctx.stroke();
 
         // Second arc (middle)
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 35, 55, Math.PI * 1.25, Math.PI * 1.75, false);
+        ctx.arc(centerX, centerY + 32, 50, Math.PI * 1.25, Math.PI * 1.75, false);
         ctx.stroke();
 
         // Third arc (largest) - outer
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 35, 80, Math.PI * 1.25, Math.PI * 1.75, false);
+        ctx.arc(centerX, centerY + 32, 72, Math.PI * 1.25, Math.PI * 1.75, false);
         ctx.stroke();
     } else if (iconSVG === 'menu') {
         // Menu icon (hamburger)
-        const lineLength = 100;
+        const lineLength = 92;
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
-        const spacing = 30;
+        const spacing = 28;
 
         // Top line
         ctx.beginPath();
