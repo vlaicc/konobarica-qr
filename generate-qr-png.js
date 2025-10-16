@@ -47,7 +47,7 @@ async function generateQRWithIcon(filename, iconSVG) {
 
     // Draw icon
     ctx.strokeStyle = '#000000';
-    ctx.lineWidth = 14;
+    ctx.lineWidth = 15;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
 
