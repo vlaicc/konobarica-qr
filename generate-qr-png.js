@@ -46,26 +46,27 @@ async function generateQRWithIcon(filename, iconSVG) {
     if (iconSVG === 'wifi') {
         // WiFi icon
         const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
+        const centerY = canvas.height / 2 + 10;
 
         // Dot at bottom
+        ctx.fillStyle = '#000000';
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 30, 6, 0, Math.PI * 2);
+        ctx.arc(centerX, centerY + 35, 8, 0, Math.PI * 2);
         ctx.fill();
 
-        // First arc (smallest)
+        // First arc (smallest) - inner
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 30, 25, -Math.PI * 0.7, -Math.PI * 0.3, false);
+        ctx.arc(centerX, centerY + 35, 30, Math.PI * 1.25, Math.PI * 1.75, false);
         ctx.stroke();
 
-        // Second arc
+        // Second arc (middle)
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 30, 50, -Math.PI * 0.7, -Math.PI * 0.3, false);
+        ctx.arc(centerX, centerY + 35, 55, Math.PI * 1.25, Math.PI * 1.75, false);
         ctx.stroke();
 
-        // Third arc (largest)
+        // Third arc (largest) - outer
         ctx.beginPath();
-        ctx.arc(centerX, centerY + 30, 75, -Math.PI * 0.7, -Math.PI * 0.3, false);
+        ctx.arc(centerX, centerY + 35, 80, Math.PI * 1.25, Math.PI * 1.75, false);
         ctx.stroke();
     } else if (iconSVG === 'menu') {
         // Menu icon (hamburger)
