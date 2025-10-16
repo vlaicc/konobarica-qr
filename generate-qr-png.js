@@ -20,8 +20,8 @@ async function generateQRWithIcon(filename, iconSVG) {
     // Load QR code image
     const qrImage = await loadImage(qrDataURL);
 
-    // Add white padding around QR code (~3mm = ~23px at print resolution)
-    const padding = 23;
+    // Add white padding around QR code (~6mm = ~46px at print resolution)
+    const padding = 46;
     const borderRadius = 35;
 
     // Create canvas with padding
