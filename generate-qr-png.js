@@ -29,7 +29,7 @@ async function generateQRWithIcon(filename, iconSVG) {
     const ctx = canvas.getContext('2d');
 
     // Draw off-white rounded rectangle background (2% gray)
-    ctx.fillStyle = '#FAFAFA';
+    ctx.fillStyle = '#F9F9F9';
     ctx.beginPath();
     ctx.roundRect(0, 0, canvas.width, canvas.height, borderRadius);
     ctx.fill();
